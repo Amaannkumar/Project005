@@ -6,8 +6,6 @@ import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
-import java.util.HashMap;
-
 import org.testng.annotations.Test;
 
 public class Testing {
@@ -23,8 +21,8 @@ public class Testing {
 		.get("https://gorest.co.in/public/v2/users/7441635")
 		
 		.then()
-		.statuscode(200)
-		.body("gender",equals("male"))
+		.statusCode(200)
+	    .body("gender",equalTo("male"))
 		.log().all();
 	}
    /*
